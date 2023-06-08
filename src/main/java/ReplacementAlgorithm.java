@@ -5,6 +5,8 @@ public abstract class ReplacementAlgorithm
 	
 	// the number of physical page frame
 	protected int pageFrameCount;
+
+	protected String algorithmName;
 	
 	/**
 	 * @param pageFrameCount - the number of physical page frames
@@ -25,7 +27,7 @@ public abstract class ReplacementAlgorithm
 	}
 	
 	/**
-	 * @param int pageNumber - the page number to be inserted
+	 * @param pageNumber - the page number to be inserted
 	 */
 	public abstract void insert(int pageNumber); 
 }
