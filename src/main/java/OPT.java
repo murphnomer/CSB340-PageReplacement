@@ -22,21 +22,26 @@ public class OPT extends ReplacementAlgorithm { // OPT will extend ReplacementAl
         if (!frames.contains(pageNumber)) {
             pageFaultCount++;
             if (frames.size() >= pageFrameCount) {
-                int longestf = allPages.length;
+                int longestf = frames.peek();
                 int longesti = allPages.length;
+                int thisi;
                 for (Integer f : frames) {
+                    thisi = 0;
                     for (int i = currentIndex; i < allPages.length; i++) {
                         if (f.equals(allPages[i])) {
-                            longesti = i;
+                            thisi = i;
+                            if (i > longesti) {
+                                longestf = f;
+                                longesti = i;
+                            }
+                        }
+                        if (thisi == 0) {
                             longestf = f;
+                            longesti = allPages.length;
                         }
                     }
                 }
-                if (longestf < allPages.length) {
-                    frames.remove(Integer.valueOf(longestf));
-                } else {
-                    frames.remove();
-                }
+                frames.remove(Integer.valueOf(longestf));
             }
             frames.add(pageNumber);
         }
