@@ -5,17 +5,12 @@ import java.util.Queue;
 public class OPT extends ReplacementAlgorithm { // OPT will extend ReplacementAlgorithm
 
     LinkedList<Integer> frames = new LinkedList<>();
-    int[] allPages;
     int currentIndex;
 
     public OPT(int pageFrameCount) {
         super(pageFrameCount);
         algorithmName = "OPT";
         currentIndex = 0;
-    }
-
-    public void setPageList(int[] allPages) {
-        this.allPages = allPages;
     }
 
     public void insert(int pageNumber) {

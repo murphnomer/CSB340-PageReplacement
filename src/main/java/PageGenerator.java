@@ -20,6 +20,15 @@ public class PageGenerator
 		public int[] getReferenceString() {
 			return referenceString;
 		}
+
+		public String formatRefString() {
+			StringBuilder sb = new StringBuilder("[ ");
+			for (int i : referenceString) {
+				sb.append(i + " ");
+			}
+			sb.append("]");
+			return sb.toString();
+		}
 	}
 
 	List<Page> pages;

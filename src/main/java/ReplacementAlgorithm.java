@@ -7,7 +7,9 @@ public abstract class ReplacementAlgorithm
 	protected int pageFrameCount;
 
 	protected String algorithmName;
-	
+
+	protected int[] allPages;
+
 	/**
 	 * @param pageFrameCount - the number of physical page frames
 	 */
@@ -18,7 +20,11 @@ public abstract class ReplacementAlgorithm
 		this.pageFrameCount = pageFrameCount;
 		pageFaultCount = 0;
 	}
-	
+
+	public void setPageList(int[] allPages) {
+		this.allPages = allPages;
+	}
+
 	/**
 	 * @return - the number of page faults that occurred.
 	 */
